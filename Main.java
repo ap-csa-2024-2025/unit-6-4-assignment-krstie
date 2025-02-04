@@ -31,17 +31,36 @@ public class Main
   {
     for (int i= 0; i < arr.length; i++)
     {
-      double element = arr[i];
-      if (element == target)
-      {
-        return
-      }
+     int target = arr[i];
+     for (int j = i+1; j < arr.length; j++)
+     if (arr[i] == arr[j] && i != j)
+     {
+      return true;
+     }
+    }
     return false;
   }
 
-  public static String findMode(String[] arr)
+  public static int findMode(int[] arr)
   {
-    // replace with your code
-    return null;
+    int count = 0;
+    int max_count = 0;
+    int mode = arr[0];
+    for (int i = i; i < arr.length; i++)
+    {
+      int potential_mode = arr[i];
+      count = 0;
+      for (j = 0; j < i; ++j)
+      {
+        if (arr[j] == potential_mode)
+        ++count;
+      }
+      if (count > max_count)
+      {
+        max_count = count;
+        mode = potential_mode;
+      }
+    }
+    return mode;
   }
 }
